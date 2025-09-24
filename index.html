@@ -65,7 +65,11 @@
       color: #004aad;
     }
     canvas {
-      margin-top: 20px;
+      margin-top: 30px;
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
     footer {
       background: #002b5b;
@@ -98,7 +102,7 @@
       padding: 30px;
       border-radius: 12px;
       width: 90%;
-      max-width: 500px;
+      max-width: 550px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.2);
       animation: fadeIn 0.3s ease;
     }
@@ -107,7 +111,7 @@
       color: #004aad;
       text-align: center;
     }
-    .modal-content input, .modal-content textarea {
+    .modal-content input, .modal-content textarea, .modal-content select {
       width: 100%;
       padding: 12px;
       margin: 8px 0;
@@ -185,7 +189,11 @@
         <input type="text" placeholder="Nombre" required>
         <input type="text" placeholder="Apellido" required>
         <input type="email" placeholder="Correo electrónico" required>
-        <input type="tel" placeholder="Número de teléfono">
+        <input type="tel" placeholder="Número de teléfono" required>
+        <input type="text" placeholder="País / Ciudad" required>
+        <input type="text" placeholder="Código Postal">
+        <label for="fecha">Fecha de Nacimiento</label>
+        <input type="date" id="fecha" required>
         <textarea rows="4" placeholder="¿Cuál es tu consulta?" required></textarea>
         <button type="submit" class="btn-submit">Enviar</button>
         <button type="button" class="btn-close" onclick="closeModal()">Cerrar</button>
@@ -204,16 +212,16 @@
           label: 'Ingresos',
           data: [12000, 15000, 14000, 20000, 22000, 25000],
           borderColor: '#0074e4',
-          backgroundColor: 'rgba(0,116,228,0.2)',
-          fill: true,
+          borderWidth: 3,
+          fill: false,
           tension: 0.3
         },
         {
           label: 'Gastos',
           data: [8000, 10000, 9500, 13000, 12000, 14500],
           borderColor: '#ff4d4d',
-          backgroundColor: 'rgba(255,77,77,0.2)',
-          fill: true,
+          borderWidth: 3,
+          fill: false,
           tension: 0.3
         }]
       },
@@ -222,6 +230,21 @@
         plugins: {
           legend: {
             position: 'bottom'
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: {
+              color: '#333',
+              font: { size: 14 }
+            }
+          },
+          x: {
+            ticks: {
+              color: '#333',
+              font: { size: 14 }
+            }
           }
         }
       }

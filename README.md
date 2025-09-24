@@ -20,11 +20,11 @@ Este proyecto muestra cómo podría lucir un panel de control profesional para a
 
 ## 🖼️ Capturas de la Demo
 
-*(Aquí puedes subir imágenes al repo, por ejemplo en una carpeta `/assets`, y luego referenciarlas con rutas como `![Dashboard](assets/dashboard.png)` )*  
+<img width="1918" height="825" alt="image" src="https://github.com/user-attachments/assets/6bbde51a-f5da-4cb9-9801-cce078fe8734" />
+<img width="1919" height="822" alt="image" src="https://github.com/user-attachments/assets/079166ab-8a7b-482b-ae61-5c4e305e8b48" />
 
----
 
-## 🚀 Tecnologías <img width="1465" height="744" alt="image" src="https://github.com/user-attachments/assets/f67efc48-80fe-44c1-ac94-48483775fa2b" />
+## 🚀 Tecnologías Utilizadas
 tilizadas
 
 - [HTML5](https://developer.mozilla.org/es/docs/Web/HTML)
@@ -34,9 +34,9 @@ tilizadas
 
 ---
 
-## 📌 Cómo visualizar el proyecto en tu equipo
+## 📌 Cómo visualizar el proyecto
 
-1. Clonar este repositorio:
-   ```bash
-   git clone https://github.com/RodrigoAviles-9/smartfinance-demo.git
+👉 Puedes ver la demo en línea aquí:  
+[🌐 SmartFinance Demo](https://rodrigoaviles-9.github.io/smartfinance-demo/)
+
 

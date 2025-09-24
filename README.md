@@ -9,7 +9,7 @@ Este proyecto muestra cómo podría lucir un panel de control profesional para a
 
 ## ✨ Características principales
 
-- 📊 **Dashboard interactivo** con gráficos de Ingresos y Gastos.
+- 📊 **Dashboard interactivo** con gráficos de Ingresos, Gastos y Balances.
 - 🎨 **Diseño moderno y minimalista** usando TailwindCSS.
 - 📈 **Gráficos financieros** con Chart.js (interactivo al pasar el mouse).
 - 📝 **Formulario de contacto formal** (nombre, apellido, correo, teléfono, ubicación, código postal, fecha y consulta).
@@ -20,12 +20,12 @@ Este proyecto muestra cómo podría lucir un panel de control profesional para a
 
 ## 🖼️ Capturas de la Demo
 
-<img width="1918" height="825" alt="image" src="https://github.com/user-attachments/assets/6bbde51a-f5da-4cb9-9801-cce078fe8734" />
-<img width="1919" height="822" alt="image" src="https://github.com/user-attachments/assets/079166ab-8a7b-482b-ae61-5c4e305e8b48" />
+<img width="1919" height="954" alt="image" src="https://github.com/user-attachments/assets/58a9882c-497d-446a-a855-d18333eb9664" />
+<img width="1919" height="954" alt="image" src="https://github.com/user-attachments/assets/8e8ef75b-97e2-4b49-8993-e515553a63cb" />
+
 
 
 ## 🚀 Tecnologías Utilizadas
-tilizadas
 
 - [HTML5](https://developer.mozilla.org/es/docs/Web/HTML)
 - [TailwindCSS](https://tailwindcss.com/)

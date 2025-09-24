@@ -37,7 +37,6 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      text-decoration: none;
       transition: 0.3s;
     }
     header .btn:hover {
@@ -82,6 +81,66 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      animation: fadeIn 0.3s ease;
+    }
+    .modal-content h2 {
+      margin-top: 0;
+      color: #004aad;
+      text-align: center;
+    }
+    .modal-content input, .modal-content textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .modal-content button {
+      margin-top: 10px;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+    }
+    .btn-submit {
+      background: #0074e4;
+      color: white;
+    }
+    .btn-submit:hover {
+      background: #005bb5;
+    }
+    .btn-close {
+      background: #ccc;
+      color: #333;
+    }
+    .btn-close:hover {
+      background: #aaa;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.9);}
+      to {opacity: 1; transform: scale(1);}
+    }
   </style>
 </head>
 <body>
@@ -90,7 +149,7 @@
   <header>
     <h1>SmartFinance</h1>
     <p>Gestión financiera inteligente para empresas modernas 🚀</p>
-    <a href="#contacto" class="btn">Solicita tu Demo</a>
+    <button class="btn" onclick="openModal()">Contáctanos</button>
   </header>
 
   <!-- Dashboard simulado -->
@@ -113,24 +172,26 @@
     <canvas id="myChart"></canvas>
   </section>
 
-  <!-- Contacto -->
-  <section id="contacto">
-    <h2 style="text-align:center;">Contacto</h2>
-    <p style="text-align:center; max-width:600px; margin:auto;">
-      ¿Quieres llevar la gestión de tu negocio al siguiente nivel?  
-      Escríbenos y agenda tu demo con un especialista.
-    </p>
-    <p style="text-align:center; margin-top:20px;">
-      📧 <a href="mailto:rodrigoaviles1617@gmail.com">rodrigoaviles1617@gmail.com</a>
-    </p>
-    <p style="text-align:center; margin-top:10px;">
-      💬 <a href="https://wa.me/976223538" target="_blank">Contáctanos por WhatsApp</a>
-    </p>
-  </section>
-
+  <!-- Footer -->
   <footer>
     <p>© 2025 SmartFinance Demo | Desarrollado por <strong>Rodrigo Aviles</strong></p>
   </footer>
+
+  <!-- Modal -->
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <h2>Formulario de Contacto</h2>
+      <form>
+        <input type="text" placeholder="Nombre" required>
+        <input type="text" placeholder="Apellido" required>
+        <input type="email" placeholder="Correo electrónico" required>
+        <input type="tel" placeholder="Número de teléfono">
+        <textarea rows="4" placeholder="¿Cuál es tu consulta?" required></textarea>
+        <button type="submit" class="btn-submit">Enviar</button>
+        <button type="button" class="btn-close" onclick="closeModal()">Cerrar</button>
+      </form>
+    </div>
+  </div>
 
   <!-- Script del gráfico -->
   <script>
@@ -165,6 +226,14 @@
         }
       }
     });
+
+    // Modal control
+    function openModal() {
+      document.getElementById("contactModal").style.display = "flex";
+    }
+    function closeModal() {
+      document.getElementById("contactModal").style.display = "none";
+    }
   </script>
 
 </body>

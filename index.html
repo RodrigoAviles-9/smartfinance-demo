@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartFinance Demo</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-blue-700 to-blue-500 text-white text-center py-10 shadow">
+    <h1 class="text-4xl font-bold">SmartFinance</h1>
+    <p class="mt-2 text-lg">Gestión financiera inteligente para empresas modernas 🚀</p>
+    <button onclick="document.getElementById('contactModal').style.display='flex'"
+      class="mt-4 bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-2 px-6 rounded-lg shadow">
+      Solicita tu Demo
+    </button>
+  </header>
+
+  <!-- Dashboard -->
+  <main class="max-w-6xl mx-auto p-6">
+    <h2 class="text-2xl font-semibold text-center mb-6">Vista del Dashboard</h2>
+
+    <!-- Tarjetas -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+      <div class="bg-white rounded-xl shadow p-6 text-center">
+        <h3 class="text-xl font-bold text-blue-700">Ingresos</h3>
+        <p class="text-gray-700 font-semibold">$45,200 este mes</p>
+      </div>
+      <div class="bg-white rounded-xl shadow p-6 text-center">
+        <h3 class="text-xl font-bold text-red-600">Gastos</h3>
+        <p class="text-gray-700 font-semibold">$28,600 este mes</p>
+      </div>
+      <div class="bg-white rounded-xl shadow p-6 text-center">
+        <h3 class="text-xl font-bold text-green-600">Balance</h3>
+        <p class="text-gray-700 font-semibold">+ $16,600</p>
+      </div>
+    </div>
+
+    <!-- Gráfico -->
+    <div class="bg-white rounded-xl shadow p-6">
+      <canvas id="financeChart"></canvas>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white text-center py-6 mt-10">
+    <p class="mb-2">© 2025 SmartFinance Demo | Desarrollado por <strong>Rodrigo Aviles</strong></p>
+  </footer>
+
+  <!-- Modal Formulario -->
+  <div id="contactModal" class="fixed inset-0 hidden bg-black bg-opacity-50 justify-center items-center">
+    <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-lg relative">
+      <button onclick="document.getElementById('contactModal').style.display='none'" 
+              class="absolute top-2 right-3 text-gray-500 hover:text-gray-800 text-xl">✕</button>
+      <h2 class="text-2xl font-bold text-center mb-6">Formulario de Contacto</h2>
+      <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input type="text" placeholder="Nombre" class="border p-3 rounded" required>
+        <input type="text" placeholder="Apellido" class="border p-3 rounded" required>
+        <input type="email" placeholder="Correo electrónico" class="border p-3 rounded col-span-2" required>
+        <input type="tel" placeholder="Teléfono" class="border p-3 rounded col-span-2" required>
+        <input type="text" placeholder="Ciudad / País" class="border p-3 rounded">
+        <input type="text" placeholder="Código Postal" class="border p-3 rounded">
+        <input type="date" class="border p-3 rounded col-span-2">
+        <textarea placeholder="Escribe tu consulta..." class="border p-3 rounded col-span-2" rows="4"></textarea>
+        <button type="submit" class="col-span-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow">
+          Enviar
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Script Chart.js -->
+  <script>
+    const ctx = document.getElementById('financeChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'],
+        datasets: [
+          {
+            label: 'Ingresos',
+            data: [12000, 15000, 14000, 20000, 22000, 25000],
+            borderColor: '#1976D2',
+            backgroundColor: 'rgba(25, 118, 210, 0.2)',
+            borderWidth: 3,
+            tension: 0.3,
+            fill: true,
+            pointRadius: 0
+          },
+          {
+            label: 'Gastos',
+            data: [8000, 10000, 9300, 13000, 12000, 14500],
+            borderColor: '#E53935',
+            backgroundColor: 'rgba(229, 57, 53, 0.2)',
+            borderWidth: 3,
+            tension: 0.3,
+            fill: true,
+            pointRadius: 0
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: true, labels: { usePointStyle: true, padding: 20 } }
+        },
+        scales: {
+          y: { beginAtZero: true, ticks: { stepSize: 5000 } },
+          x: { grid: { display: false } }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

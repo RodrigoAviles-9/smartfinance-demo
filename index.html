@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartFinance - Demo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f7fb;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(135deg, #004aad, #0074e4);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+    header .btn {
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: #ffce00;
+      color: #333;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    header .btn:hover {
+      background: #ffdb4d;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+      color: #004aad;
+    }
+    canvas {
+      margin-top: 20px;
+    }
+    footer {
+      background: #002b5b;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    footer a {
+      color: #ffce00;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero / Landing -->
+  <header>
+    <h1>SmartFinance</h1>
+    <p>Gestión financiera inteligente para empresas modernas 🚀</p>
+    <a href="#contacto" class="btn">Solicita tu Demo</a>
+  </header>
+
+  <!-- Dashboard simulado -->
+  <section>
+    <h2 style="text-align:center; margin-bottom:40px;">Vista del Dashboard</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Ingresos</h3>
+        <p><strong>$45,200</strong> este mes</p>
+      </div>
+      <div class="card">
+        <h3>Gastos</h3>
+        <p><strong>$28,600</strong> este mes</p>
+      </div>
+      <div class="card">
+        <h3>Balance</h3>
+        <p><strong>+ $16,600</strong></p>
+      </div>
+    </div>
+    <canvas id="myChart"></canvas>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto">
+    <h2 style="text-align:center;">Contacto</h2>
+    <p style="text-align:center; max-width:600px; margin:auto;">
+      ¿Quieres llevar la gestión de tu negocio al siguiente nivel?  
+      Escríbenos y agenda tu demo con un especialista.
+    </p>
+    <p style="text-align:center; margin-top:20px;">
+      📧 <a href="mailto:rodrigoaivles1516@gmail.com">rodrigoaivles1516@gmail.com</a>
+    </p>
+    <p style="text-align:center; margin-top:10px;">
+      💬 <a href="https://wa.me/51999999999" target="_blank">Contáctanos por WhatsApp</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 SmartFinance Demo | Desarrollado por <strong>Rodrigo Aviles</strong></p>
+  </footer>
+
+  <!-- Script del gráfico -->
+  <script>
+    const ctx = document.getElementById('myChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'],
+        datasets: [{
+          label: 'Ingresos',
+          data: [12000, 15000, 14000, 20000, 22000, 25000],
+          borderColor: '#0074e4',
+          backgroundColor: 'rgba(0,116,228,0.2)',
+          fill: true,
+          tension: 0.3
+        },
+        {
+          label: 'Gastos',
+          data: [8000, 10000, 9500, 13000, 12000, 14500],
+          borderColor: '#ff4d4d',
+          backgroundColor: 'rgba(255,77,77,0.2)',
+          fill: true,
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'bottom'
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

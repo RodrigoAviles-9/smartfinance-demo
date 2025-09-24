@@ -3,7 +3,7 @@
 **SmartFinance** es una demo de aplicación web enfocada en la **gestión financiera inteligente** para empresas modernas 🚀.  
 Este proyecto muestra cómo podría lucir un panel de control profesional para administrar ingresos, gastos y balances, además de incluir un formulario de contacto formal para agendar demos.
 
-🔗 **Demo en vivo:** [SmartFinance Demo](https://rodrigoaviles-9.github.io/smartfinance-demo/)
+🔗 **Demo en vivo:** [SmartFinance Demo]((https://rodrigoaviles-9.github.io/smartfinance-demo/))
 
 ---
 
@@ -24,7 +24,8 @@ Este proyecto muestra cómo podría lucir un panel de control profesional para a
 
 ---
 
-## 🚀 Tecnologías utilizadas
+## 🚀 Tecnologías <img width="1465" height="744" alt="image" src="https://github.com/user-attachments/assets/f67efc48-80fe-44c1-ac94-48483775fa2b" />
+tilizadas
 
 - [HTML5](https://developer.mozilla.org/es/docs/Web/HTML)
 - [TailwindCSS](https://tailwindcss.com/)
